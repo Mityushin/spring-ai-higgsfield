@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.mityushin</groupId>
   <artifactId>spring-ai-higgsfield</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0-SNAPSHOT</version>
   <name>Spring AI Higgsfield</name>
   <description>Spring AI integration for the Higgsfield Java SDK</description>
   <url>https://github.com/Mityushin/spring-ai-higgsfield</url>
@@ -24,7 +24,7 @@
     <connection>scm:git:https://github.com/Mityushin/spring-ai-higgsfield.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/Mityushin/spring-ai-higgsfield.git</developerConnection>
     <url>https://github.com/Mityushin/spring-ai-higgsfield</url>
-    <tag>v0.1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <properties>
     <central.skipUpload>false</central.skipUpload>

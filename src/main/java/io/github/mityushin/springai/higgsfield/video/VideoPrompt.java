@@ -4,21 +4,23 @@ import org.springframework.ai.model.ModelRequest;
 
 public class VideoPrompt implements ModelRequest<String> {
 
-    private final String text;
-    private final VideoOptions options;
+	private final String text;
 
-    public VideoPrompt(String text, VideoOptions options) {
-        this.text = text;
-        this.options = options;
-    }
+	private final VideoOptions options;
 
-    @Override
-    public String getInstructions() {
-        return text;
-    }
+	public VideoPrompt(String text, VideoOptions options) {
+		this.text = text;
+		this.options = options;
+	}
 
-    @Override
-    public VideoOptions getOptions() {
-        return options;
-    }
+	@Override
+	public String getInstructions() {
+		return text;
+	}
+
+	@Override
+	public VideoOptions getOptions() {
+		return options;
+	}
+
 }

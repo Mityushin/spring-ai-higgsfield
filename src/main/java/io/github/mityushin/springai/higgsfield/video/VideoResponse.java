@@ -8,28 +8,29 @@ import java.util.List;
 
 public class VideoResponse implements ModelResponse<VideoGeneration> {
 
-    private final List<VideoGeneration> generations;
+	private final List<VideoGeneration> generations;
 
-    public VideoResponse(VideoGeneration generation) {
-        this(List.of(generation));
-    }
+	public VideoResponse(VideoGeneration generation) {
+		this(List.of(generation));
+	}
 
-    public VideoResponse(List<VideoGeneration> generations) {
-        this.generations = List.copyOf(generations);
-    }
+	public VideoResponse(List<VideoGeneration> generations) {
+		this.generations = List.copyOf(generations);
+	}
 
-    @Override
-    public VideoGeneration getResult() {
-        return generations.isEmpty() ? null : generations.get(0);
-    }
+	@Override
+	public VideoGeneration getResult() {
+		return generations.isEmpty() ? null : generations.get(0);
+	}
 
-    @Override
-    public List<VideoGeneration> getResults() {
-        return generations;
-    }
+	@Override
+	public List<VideoGeneration> getResults() {
+		return generations;
+	}
 
-    @Override
-    public ResponseMetadata getMetadata() {
-        return new MutableResponseMetadata();
-    }
+	@Override
+	public ResponseMetadata getMetadata() {
+		return new MutableResponseMetadata();
+	}
+
 }

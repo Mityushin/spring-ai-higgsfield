@@ -5,19 +5,21 @@ import org.springframework.ai.model.ResultMetadata;
 
 public class VideoGeneration implements ModelResult<Video> {
 
-    private final Video video;
+	private final Video video;
 
-    public VideoGeneration(Video video) {
-        this.video = video;
-    }
+	public VideoGeneration(Video video) {
+		this.video = video;
+	}
 
-    @Override
-    public Video getOutput() {
-        return video;
-    }
+	@Override
+	public Video getOutput() {
+		return video;
+	}
 
-    @Override
-    public ResultMetadata getMetadata() {
-        return new ResultMetadata() {};
-    }
+	@Override
+	public ResultMetadata getMetadata() {
+		return new ResultMetadata() {
+		};
+	}
+
 }

@@ -36,4 +36,6 @@ jobs:
         run: mvn -B -ntp -DskipTests install
       - name: Verify integration
         working-directory: integration
-        run: mvn -B -ntp verify
+        run: |
+          python3 tools/format_pom.py --check
+          mvn -B -ntp verify

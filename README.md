@@ -27,3 +27,15 @@ try (var client = HiggsfieldClient.fromEnvironment()) {
 Use the request ID to poll the job after submission. Inputs depend on the chosen endpoint; model-specific parameters can be passed directly through the options map. The bundled catalog is an offline, incomplete snapshot and does not establish account access. Output URLs are temporary. API calls can consume credits.
 
 Licensed under the MIT License; see [LICENSE](LICENSE).
+
+## Formatting
+
+Java source and tests follow Spring Java Format. `mvn verify` checks formatting as part of the build. To apply the Java formatter and check the POM, run:
+
+```bash
+mvn io.spring.javaformat:spring-javaformat-maven-plugin:0.0.46:apply
+python3 tools/format_pom.py --write
+python3 tools/format_pom.py --check
+```
+
+CI checks the POM format separately; the POM formatter requires Python 3.

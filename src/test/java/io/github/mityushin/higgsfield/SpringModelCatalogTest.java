@@ -7,13 +7,16 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SpringModelCatalogTest {
-    @Test void modelOptionsAcceptMatchingCatalogDescriptors() {
-        var models = ModelCatalog.bundled();
-        var video = models.get(HiggsfieldModels.SEEDANCE_2_0_TEXT_TO_VIDEO);
-        var image = models.get(HiggsfieldModels.MARKETING_STUDIO_IMAGE);
-        assertEquals(video.id(), new HiggsfieldVideoOptions(video, Map.of()).getModel());
-        assertEquals(image.id(), new HiggsfieldImageOptions(image, Map.of()).getModel());
-        assertThrows(IllegalArgumentException.class, () -> new HiggsfieldVideoOptions(image, Map.of()));
-        assertThrows(IllegalArgumentException.class, () -> new HiggsfieldImageOptions(video, Map.of()));
-    }
+
+	@Test
+	void modelOptionsAcceptMatchingCatalogDescriptors() {
+		var models = ModelCatalog.bundled();
+		var video = models.get(HiggsfieldModels.SEEDANCE_2_0_TEXT_TO_VIDEO);
+		var image = models.get(HiggsfieldModels.MARKETING_STUDIO_IMAGE);
+		assertEquals(video.id(), new HiggsfieldVideoOptions(video, Map.of()).getModel());
+		assertEquals(image.id(), new HiggsfieldImageOptions(image, Map.of()).getModel());
+		assertThrows(IllegalArgumentException.class, () -> new HiggsfieldVideoOptions(image, Map.of()));
+		assertThrows(IllegalArgumentException.class, () -> new HiggsfieldImageOptions(video, Map.of()));
+	}
+
 }

@@ -2,7 +2,7 @@
 
 An unofficial Java integration of Higgsfield image and video generation with Spring AI. Requires Java 25 and Spring AI 2.0.1. This project is not affiliated with Higgsfield or Spring.
 
-The SDK dependency is `io.github.mityushin:higgsfield-java-sdk`. Both libraries are currently snapshots; published artifacts are not yet available.
+The SDK dependency is `io.github.mityushin:higgsfield-java-sdk`. The SDK dependency version is `0.1.0`.
 
 `HiggsfieldImageModel` implements Spring AI `ImageModel`. `HiggsfieldAsyncImageModel` exposes submit and poll operations through this library's own asynchronous image interface. `HiggsfieldVideoModel` provides submit and poll operations through this library's video interfaces; these are not official Spring AI contracts.
 

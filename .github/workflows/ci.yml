@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out integration
+        uses: actions/checkout@v4
+        with:
+          path: integration
+      # The current integration depends on the SDK snapshot, which is not yet published.
+      - name: Check out SDK
+        uses: actions/checkout@v4
+        with:
+          repository: Mityushin/higgsfield-java-sdk
+          ref: main
+          path: sdk
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+          cache-dependency-path: |
+            sdk/pom.xml
+            integration/pom.xml
+      - name: Install SDK into runner's local repository
+        working-directory: sdk
+        run: mvn -B -ntp -DskipTests install
+      - name: Verify integration
+        working-directory: integration
+        run: mvn -B -ntp verify
